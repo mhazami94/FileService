@@ -6,4 +6,28 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\AutoMapper\" />
+    <Folder Include="Files\InsertFile\" />
+    <Folder Include="Files\DeleteFile\" />
+    <Folder Include="Files\GetFile\" />
+    <Folder Include="Files\UpdateFile\" />
+    <Folder Include="Owner\AuthenticateOwner\" />
+    <Folder Include="Owner\GetOwnerById\" />
+    <Folder Include="Owner\GetOwnerByEmail\" />
+    <Folder Include="Owner\RegisterOwner\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FileService.Domain.SeekWork\FileService.Domain.SeekWork.csproj" />
+    <ProjectReference Include="..\..\Core\FileService.Domain\FileService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
