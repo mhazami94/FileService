@@ -37,6 +37,11 @@ public class Files : AggregateRoot<FilesId>
         return new Files(id, fileName, contentType, content, size, extension, ownerId);
     }
 
+    public static Files CreateNewForDelete(FilesId id)
+    {
+        return new Files(id);
+    }
+
     public void UpdateFile(string fileName, string contentType, byte[] content, float size, string extension)
     {
         if (string.IsNullOrEmpty(fileName))
@@ -58,7 +63,7 @@ public class Files : AggregateRoot<FilesId>
         AddDomainEvent(new FilesUpdatedEvent(Id, FileName, ContentType, Content, Size, Extension));
     }
 
-    public Files(FilesId id, string fileName, string contentType, byte[] content, float size, string extension, OwnerId ownerId)
+    private Files(FilesId id, string fileName, string contentType, byte[] content, float size, string extension, OwnerId ownerId)
     {
         Id = id;
         FileName = fileName;
@@ -70,4 +75,8 @@ public class Files : AggregateRoot<FilesId>
         OwnerId = ownerId;
     }
 
+    private Files(FilesId id)
+    {
+        Id = id;
+    }
 }

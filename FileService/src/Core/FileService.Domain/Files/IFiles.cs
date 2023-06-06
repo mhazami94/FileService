@@ -9,9 +9,10 @@ namespace FileService.Domain.Files
 {
     public interface IFiles : IRepository<Files>
     {
-        Task<Files> Add(Files file, CancellationToken cancellationToken = default);
-        Task<Files> GetById(FilesId filesId, CancellationToken cancellationToken = default);
-        Task<bool> Remove(FilesId filesId, CancellationToken cancellationToken = default);
+        Task Add(Files file, CancellationToken cancellationToken = default);
+        Task<Files?> GetById(FilesId filesId, CancellationToken cancellationToken = default);
+        void Remove(FilesId filesId);
         Task<IReadOnlyList<Files>> GetGroupFiles(List<FilesId> filesIds, CancellationToken cancellationToken = default);
+        Task<IReadOnlyList<Files>> Filter(Specification<Files> specification, CancellationToken cancellationToken = default);
     }
 }
