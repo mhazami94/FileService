@@ -12,7 +12,6 @@
     <Folder Include="Files\DeleteFile\" />
     <Folder Include="Files\GetFile\" />
     <Folder Include="Files\UpdateFile\" />
-    <Folder Include="Owner\AuthenticateOwner\" />
     <Folder Include="Owner\GetOwnerById\" />
     <Folder Include="Owner\GetOwnerByEmail\" />
     <Folder Include="Owner\RegisterOwner\" />
